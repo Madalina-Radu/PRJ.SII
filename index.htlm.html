@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>MDR Nails – Geluri de unghii cu sclipici</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+        }
+        header {
+            border-bottom: 2px solid #d4af37;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+ background-color: #000000;
+        }
+        .logo-img {
+    height: 100px;
+    width: auto;
+}
+        nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* PAGINI VIRTUALE */
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+
+        .search-box input {
+            padding: 6px;
+            border: 1px solid #d4af37;
+            border-radius: 4px;
+        }
+        .banner {
+            background: linear-gradient(135deg, #fff, #f9f4e8);
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .banner h1 {
+            color: #d4af37;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        .banner p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .banner button {
+            padding: 12px 30px;
+            background-color: #d4af37;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        section {
+            padding: 60px 40px;
+        }
+        h2 {
+            text-align: center;
+            color: #d4af37;
+            margin-bottom: 40px;
+        }
+.reviews {
+    background-color: #f9f4e8;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.reviews h2 {
+    color: #d4af37;
+    margin-bottom: 40px;
+}
+
+.review-container {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.review {
+    display: none;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.review.active {
+    display: block;
+}
+
+.review-buttons {
+    margin-top: 20px;
+}
+
+.review-buttons button {
+    background-color: #d4af37;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.review-buttons button:hover {
+    background-color: #b89128;
+}
+.product-page-container {
+    display: flex;          /* Flexbox pentru a pune imaginea și textul paralel */
+    gap: 40px;              /* Spațiu între imagine și text */
+    max-width: 900px;
+    margin: 40px auto;
+    align-items: flex-start;
+    flex-wrap: wrap;        /* pe ecrane mici textul merge sub imagine */
+}
+
+.product-page-image {
+    flex: 1 1 40%;          /* Imaginea ocupă 40% din container */
+}
+
+.product-page-image img {
+    width: 100%;
+    max-width: 300px;       /* Imagine mai mică */
+    border-radius: 10px;
+}
+
+.product-page-details {
+    flex: 1 1 55%;          /* Textul ocupă restul spațiului */
+}
+
+.product-page-details h1 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.product-page-details p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.product-page-details .add-to-cart {
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+       .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+        .price {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .product-card button {
+            background-color: #d4af37;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .cart {
+            max-width: 700px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border-bottom: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        .total {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .checkout {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .checkout button {
+            background-color: #d4af37;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+        }
+     .about-contact {
+    max-width: 900px;
+    margin: auto;
+    display: flex;          
+    gap: 40px;               
+    flex-wrap: wrap;         
+    justify-content: space-between;
+   }
+
+.contact-info, .contact-form {
+    flex: 1 1 45%;           
+    min-width: 300px;       
+}
+
+.about-contact p {
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;             
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form form button {
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+        footer {
+            background-color: #f9f4e8;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top-bar">
+        <div class="logo">
+            <img src="logo.png" class="logo-img">
+        </div>
+        <nav>
+            <a onclick="showPage('home')">Acasă</a>
+            <a onclick="showPage('products')">Produse</a>
+            <a onclick="showPage('about')">Despre & Contact</a>
+            <a onclick="showPage('cart')">Coș</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Caută produse">
+        </div>
+    </div>
+</header>
+
+
+<!-- PAGINA PRINCIPALĂ --> 
+<section id="home" class="page active banner"> 
+<h1>Eleganță și strălucire pentru unghii perfecte</h1> 
+<h2>MDR Nails aduce rafinamentul la vârful degetelor!</h2> 
+<p>Descoperă colecția noastră de nuanțe pline de strălucire elegantă care transformă orice manichiură într-o operă de artă.</p>
+<button onclick="showPage('products')">Descoperă produsele</button> 
+<section class="reviews">
+    <h2>Părerile cumpărătorilor:</h2>
+    <div class="review-container">
+        <div class="review active">
+            <p>"Produsele MDR Nails sunt minunate! Unghiile mele arată perfect."</p>
+            <strong>- Ana M.</strong>
+        </div>
+        <div class="review">
+            <p>"Livrare rapidă și geluri cu sclipici de calitate superioară."</p>
+            <strong>- Ioana P.</strong>
+        </div>
+        <div class="review">
+            <p>"Am încercat Gel Party Era și sunt super mulțumită de rezultat."</p>
+            <strong>- Maria L.</strong>
+        </div>
+    </div>
+    <div class="review-buttons">
+        <button id="prev">❮</button>
+        <button id="next">❯</button>
+    </div>
+</section> 
+</section> 
+
+<!-- PAGINA PRODUSE -->
+<section id="products" class="page">
+    <h2>Produse</h2>
+    <div class="products">
+        <div class="product-card">
+            <img src="albastru.png" alt="Gel Royal Sparkle">
+            <h3><a href="#" onclick="showPage('gel-royal-sparkle')">Gel Royal Sparkle</a></h3>
+            <div class="price">70 RON</div>
+            <button onclick="addToCart('Gel Royal Sparkle', 70)">
+    Adaugă în coș
+</button>
+
+        </div>
+
+        <div class="product-card">
+            <img src="verde.png" alt="Gel Calm Shine">
+            <h3>Gel Calm Shine</h3>
+            <div class="price">75 RON</div>
+            <button onclick="addToCart('Gel Calm Shine', 75)">
+    Adaugă în coș
+</button>
+
+        </div>
+
+        <div class="product-card">
+            <img src="roz.png" alt="Gel Rose Gold Glitter">
+            <h3>Gel Rose Gold Glitter</h3>
+            <div class="price">70 RON</div>
+         <button onclick="addToCart('Gel Rose Gold Glitter', 70)">
+    Adaugă în coș
+</button>
+
+        </div>
+
+        <div class="product-card">
+            <img src="porto.png" alt="Gel Party Era">
+            <h3>Gel Party Era</h3>
+            <div class="price">70 RON</div>
+            <button onclick="addToCart('Gel Party Era', 70)">
+    Adaugă în coș
+</button>
+
+        </div>
+
+        <div class="product-card">
+            <img src="set.png" alt="Gel Luxury Set">
+            <h3>Gel Luxury Set</h3>
+            <div class="price">250 RON</div>
+            <button onclick="addToCart('Gel Luxury Set', 250)">
+    Adaugă în coș
+</button>
+
+        </div>
+    </div>
+</section>
+
+<section id="gel-royal-sparkle" class="page product-page">
+    <div class="product-page-container">
+        <div class="product-page-image">
+            <img src="albastru.png" alt="Gel Royal Sparkle">
+        </div>
+        <div class="product-page-details">
+            <h1>Gel Royal Sparkle</h1>
+            <p>Pătrunde în lumea luxului cu Gelul cu Sclipici Albastru Royal! </p>
+<p>Acest produs exclusivist de la MDR Nails îți oferă strălucirea regală pe care o meriți. Formula este un cocktail intens de sclipici fin și particule mai mari, toate în nuanțe de albastru profund și electrizant, creând un efect de unghie plină de bijuterii. Perfect pentru a adăuga o notă de opulență și rafinament manichiurii tale.</p>
+<p>Intens, vibrant și rezistent—un must-have pentru unghiile tale regale!</p>
+            <p class="price">70 RON</p>
+            <p><strong>Stoc:</strong> Disponibil</p>
+            <button class="add-to-cart" onclick="addToCart('Gel Royal Sparkle', 70)">
+    Adaugă în coș
+</button>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PAGINA COȘ -->
+<section id="cart" class="page">
+    <h2>Coșul de cumpărături</h2>
+
+    <div class="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>Produs</th>
+                    <th>Cantitate</th>
+                    <th>Preț</th>
+                    <th>Elimină</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Produsele vor fi adăugate din JS -->
+            </tbody>
+        </table>
+
+        <div class="total" id="cart-total">Total: 0 RON</div>
+
+        <div class="checkout">
+            <button>Finalizează comanda</button>
+        </div>
+    </div>
+</section>
+
+</section>
+
+<!-- PAGINA DESPRE + CONTACT -->
+<section id="about" class="page">
+    <h2>Despre MDR Nails & Contact</h2>
+    <div class="about-contact">
+        <!-- Secțiunea informații -->
+        <div class="contact-info">
+            <h3>
+                MDR Nails a luat naștere din pasiunea pentru frumusețe și rafinament,
+                oferind geluri cu sclipici premium dedicate manichiurilor elegante.
+            </h3>
+
+            <p>
+                <strong>Email:</strong> contact@mdrnails.ro<br>
+                <strong>Telefon:</strong> +40 700 000 000
+            </p>
+        </div>
+
+        <!-- Secțiunea formular -->
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Nume complet">
+                <input type="email" placeholder="Adresă de email">
+                <textarea rows="4" placeholder=""></textarea>
+                <button type="submit">Trimite mesaj</button>
+            </form>
+        </div>
+    </div>
+</section>
+<footer>
+    © 2025 MDR Nails. Toate drepturile rezervate.
+</footer>
+
+<script>
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.getElementById(pageId).classList.add('active');
+}
+</script>
+<script>
+let currentReview = 0;
+const reviews = document.querySelectorAll('.review');
+
+function showReview(index) {
+    reviews.forEach(r => r.classList.remove('active'));
+    reviews[index].classList.add('active');
+}
+
+document.getElementById('next').addEventListener('click', () => {
+    currentReview = (currentReview + 1) % reviews.length;
+    showReview(currentReview);
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    currentReview = (currentReview - 1 + reviews.length) % reviews.length;
+    showReview(currentReview);
+});
+
+// afișează primul review la încărcare
+showReview(currentReview);
+</script>
+
+<script>
+let cart = [];
+</script>
+<script>
+function addToCart(name, price) {
+    cart.push({ name, price });
+
+    updateCart();
+    showPage('cart');
+}
+
+function updateCart() {
+    const cartTable = document.getElementById("cart-items");
+    const totalEl = document.getElementById("cart-total");
+
+    cartTable.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+
+        cartTable.innerHTML += `
+            <tr>
+                <td>${item.name}</td>
+                <td>1</td>
+                <td>${item.price} RON</td>
+                <td><button onclick="removeFromCart(${index})">X</button></td>
+            </tr>
+        `;
+    });
+
+    totalEl.textContent = "Total: " + total + " RON";
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+</script>
+
+
+</body>
+</html>
