@@ -344,7 +344,7 @@
     <h2>Produse</h2>
     <div class="products">
         <div class="product-card">
-            <img src="albastru.png" alt="Gel Royal Sparkle">
+            <img src="images/albastru.jpg" alt="Gel Royal Sparkle">
             <h3><a href="#" onclick="showPage('gel-royal-sparkle')">Gel Royal Sparkle</a></h3>
             <div class="price">70 RON</div>
             <button onclick="addToCart('Gel Royal Sparkle', 70)">
@@ -354,7 +354,7 @@
         </div>
 
         <div class="product-card">
-            <img src="verde.png" alt="Gel Calm Shine">
+            <img src="images/verde.jpg" alt="Gel Calm Shine">
             <h3>Gel Calm Shine</h3>
             <div class="price">75 RON</div>
             <button onclick="addToCart('Gel Calm Shine', 75)">
@@ -364,7 +364,7 @@
         </div>
 
         <div class="product-card">
-            <img src="roz.png" alt="Gel Rose Gold Glitter">
+            <img src="images/roz.jpg" alt="Gel Rose Gold Glitter">
             <h3>Gel Rose Gold Glitter</h3>
             <div class="price">70 RON</div>
          <button onclick="addToCart('Gel Rose Gold Glitter', 70)">
@@ -374,7 +374,7 @@
         </div>
 
         <div class="product-card">
-            <img src="porto.png" alt="Gel Party Era">
+            <img src="images/porto.jpg" alt="Gel Party Era">
             <h3>Gel Party Era</h3>
             <div class="price">70 RON</div>
             <button onclick="addToCart('Gel Party Era', 70)">
@@ -384,7 +384,7 @@
         </div>
 
         <div class="product-card">
-            <img src="set.png" alt="Gel Luxury Set">
+            <img src="images/set.jpg" alt="Gel Luxury Set">
             <h3>Gel Luxury Set</h3>
             <div class="price">250 RON</div>
             <button onclick="addToCart('Gel Luxury Set', 250)">
@@ -398,7 +398,7 @@
 <section id="gel-royal-sparkle" class="page product-page">
     <div class="product-page-container">
         <div class="product-page-image">
-            <img src="albastru.png" alt="Gel Royal Sparkle">
+            <img src="images/albastru.jpg" alt="Gel Royal Sparkle">
         </div>
         <div class="product-page-details">
             <h1>Gel Royal Sparkle</h1>
@@ -551,3 +551,4 @@ function removeFromCart(index) {
 
 </body>
 </html>
+
