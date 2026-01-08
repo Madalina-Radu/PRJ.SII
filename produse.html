@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>MDR Nails – Produse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="top-bar">
+    <div class="logo">
+      <img src="images/logo.jpg" class="logo-img" alt="MDR Nails">
+    </div>
+
+    <nav>
+      <a href="index.html">Acasă</a>
+      <a href="produse.html">Produse</a>
+      <a href="contact.html">Despre & Contact</a>
+      <a href="cos.html">Coș</a>
+    </nav>
+
+    <div class="search-box">
+      <input type="text" placeholder="Caută produse">
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2>Produse</h2>
+
+  <div class="products">
+    <div class="product-card">
+      <img src="images/albastru.jpg" alt="Gel Royal Sparkle">
+      <h3><a href="produs-royal.html">Gel Royal Sparkle</a></h3>
+      <div class="price">70 RON</div>
+      <button onclick="addToCart('Gel Royal Sparkle', 70)">Adaugă în coș</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/verde.ipg" alt="Gel Calm Shine">
+      <h3>Gel Calm Shine</h3>
+      <div class="price">75 RON</div>
+      <button onclick="addToCart('Gel Calm Shine', 75)">Adaugă în coș</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/roz.jpg" alt="Gel Rose Gold Glitter">
+      <h3>Gel Rose Gold Glitter</h3>
+      <div class="price">70 RON</div>
+      <button onclick="addToCart('Gel Rose Gold Glitter', 70)">Adaugă în coș</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/porto.jpg" alt="Gel Party Era">
+      <h3>Gel Party Era</h3>
+      <div class="price">70 RON</div>
+      <button onclick="addToCart('Gel Party Era', 70)">Adaugă în coș</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/set.jpg" alt="Gel Luxury Set">
+      <h3>Gel Luxury Set</h3>
+      <div class="price">250 RON</div>
+      <button onclick="addToCart('Gel Luxury Set', 250)">Adaugă în coș</button>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 MDR Nails. Toate drepturile rezervate.</footer>
+<script src="app.js"></script>
+</body>
+</html>

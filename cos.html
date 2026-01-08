@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>MDR Nails – Coș</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="top-bar">
+    <div class="logo">
+      <img src="images/logo.jpg" class="logo-img" alt="MDR Nails">
+    </div>
+
+    <nav>
+      <a href="index.html">Acasă</a>
+      <a href="produse.html">Produse</a>
+      <a href="contact.html">Despre & Contact</a>
+      <a href="cos.html">Coș</a>
+    </nav>
+
+    <div class="search-box">
+      <input type="text" placeholder="Caută produse">
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2>Coșul de cumpărături</h2>
+
+  <div class="cart">
+    <table>
+      <thead>
+        <tr>
+          <th>Produs</th>
+          <th>Cantitate</th>
+          <th>Preț</th>
+          <th>Elimină</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+    </table>
+
+    <div class="total" id="cart-total">Total: 0 RON</div>
+
+    <div class="checkout">
+      <button>Finalizează comanda</button>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 MDR Nails. Toate drepturile rezervate.</footer>
+<script src="app.js"></script>
+</body>
+</html>
